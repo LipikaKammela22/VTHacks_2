@@ -17,7 +17,6 @@
         android:fontFamily="@font/fbi"
         android:textColor="#004879"
 
-
         />
     <CheckBox android:id="@+id/checkbox_top100"
         android:layout_width="wrap_content"
