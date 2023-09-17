@@ -26,7 +26,7 @@
         android:layout_marginLeft="25dp"
         android:text="FAANG"
         android:textSize="18dp"
-        android:onCheck="checkFAANG"/>
+        android:onClick="checkFAANG"/>
     <CheckBox android:id="@+id/checkbox_real_estate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
         android:layout_marginLeft="25dp"
         android:text="Real Estate"
         android:textSize="18dp"
-        android:onCheck="checkRealEstate"/>
+        android:onClick="checkRealEstate"/>
     <CheckBox android:id="@+id/checkbox_information_technology"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
         android:layout_marginLeft="25dp"
         android:text="Information Technology"
         android:textSize="18dp"
-        android:onCheck="checkInformationTech"/>
+        android:onClick="checkInformationTech"/>
     <CheckBox android:id="@+id/checkbox_health"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
         android:layout_marginLeft="25dp"
         android:text="Healthcare"
         android:textSize="18dp"
-        android:onCheck="checkHealthcare"/>
+        android:onClick="checkHealthcare"/>
     <CheckBox android:id="@+id/checkbox_financials"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
         android:layout_marginLeft="25dp"
         android:text="Financials"
         android:textSize="18dp"
-        android:onCheck="checkFinancials"/>
+        android:onClick="checkFinancials"/>
     <CheckBox android:id="@+id/checkbox_energy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
         android:layout_marginLeft="25dp"
         android:text="Energy"
         android:textSize="18dp"
-        android:onCheck="checkEnergy"/>
+        android:onClick="checkEnergy"/>
     <CheckBox android:id="@+id/checkbox_defensive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
         android:layout_marginLeft="25dp"
         android:text="Defensive"
         android:textSize="18dp"
-        android:onCheck="checkDefensive"/>
+        android:onClick="checkDefensive"/>
     <CheckBox android:id="@+id/checkbox_food"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
         android:layout_marginLeft="25dp"
         android:text="Agro and Food Industry"
         android:textSize="18dp"
-        android:onCheck="checkAgroAndFood"/>
+        android:onClick="checkAgroAndFood"/>
 
     <Button
         android:id="@+id/next"
