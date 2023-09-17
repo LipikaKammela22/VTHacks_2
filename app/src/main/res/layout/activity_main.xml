@@ -77,7 +77,7 @@
 
 
         <EditText
-            android:id="@+id/averageexpidenture"
+            android:id="@+id/averageexpenditure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:digits="0123456789"
@@ -140,7 +140,7 @@
         android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="clickClear"
+        android:onClick="clickNext"
         android:text="Next"
         android:layout_gravity="center"
         android:textStyle="bold"
