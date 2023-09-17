@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class Preferences extends AppCompatActivity {
+    static String investAmt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
