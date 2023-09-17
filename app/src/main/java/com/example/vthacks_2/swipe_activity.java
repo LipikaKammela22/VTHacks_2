@@ -12,4 +12,3 @@ public class swipe_activity extends AppCompatActivity {
         setContentView(R.layout.activity_swipe);
     }
 }
-/// hiiiii
