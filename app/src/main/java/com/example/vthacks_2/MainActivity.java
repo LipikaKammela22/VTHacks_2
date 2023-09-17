@@ -1,8 +1,18 @@
 package com.example.vthacks_2;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 
 import android.view.View;
@@ -19,6 +29,48 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        creditScore = findViewById(R.id.creditscore);
+        averageExpenditure = findViewById(R.id.averageexpenditure);
+        monthlyIncome = findViewById(R.id.monthlyincome);
+
+        // when the clear button is clicked
+        Button btnClear = (Button) findViewById(R.id.buttonClear);
+        AdapterView.OnClickListener ocl;
+        ocl = new AdapterView.OnClickListener() {
+            public void onClick(View v) {
+
+                creditScore.getText().clear();
+                averageExpenditure.getText().clear();
+                monthlyIncome.getText().clear();
+
+            }
+        };
+        btnClear.setOnClickListener(ocl);
+        btnClear.setEnabled(false);
+
+
+        // Toggles the button enabling - by knowing when there is information to convert
+        TextWatcher tw;
+        tw = new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (creditScore.getText().length() == 0 && averageExpenditure.getText().length() == 0 && monthlyIncome.getText().length() == 0) {
+                    btnClear.setEnabled(false);
+                    btnClear.setEnabled(false);
+                } else {
+                    btnClear.setEnabled(true);
+                }
+            }
+        };
+        creditScore.addTextChangedListener(tw);
+        averageExpenditure.addTextChangedListener(tw);
+        monthlyIncome.addTextChangedListener(tw);
 
     }
 
@@ -37,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
         double remainingIncome = monthlyIncomeVal - averageExpenditureVal;
 
-        double invest;
+        double invest =0;
 
         try {
             //Poor: Invest 3%
@@ -68,5 +120,23 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Please enter a valid credit score.", Toast.LENGTH_SHORT).show();
 
         }
+        String investStr = Double.toString(invest);
+
+        Intent intent = new Intent(this, Preferences.class);
+        startActivity(intent);
+
+
     }
+
+    ActivityResultLauncher<Intent> someActivityResultLauncher=registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result)
+        {
+            if(result.getResultCode()== Activity.RESULT_OK){
+                Intent data = result.getData();
+            }
+        }
+    });
+
+
 }
