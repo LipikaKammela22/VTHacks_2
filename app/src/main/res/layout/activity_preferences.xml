@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/fbi"
         android:layout_marginLeft="25dp"
-        android:text="Top 100"
+        android:text="FAANG"
         android:textSize="18dp"/>
     <CheckBox android:id="@+id/checkbox_real_estate"
         android:layout_width="wrap_content"
